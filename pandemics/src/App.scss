@@ -1,13 +1,65 @@
-.CenterLine{
-    width: 8px;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin: 24px 0px;
+$lineWidth: 8px;
+
+.TimeLine {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
-.TimeLine{
+.CenterLine {
+    width: $lineWidth;
+    height: 100%;
+    position: absolute;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: hsl(180deg, 100%, 90);
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 24px 0px;
+    border-radius: $lineWidth/2;
 }
+
+.TimeLineItems {
+
+}
+
+.TimeLineItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    border-left: solid 1px rgba(0,0,0,0.2);
+}
+
+.Circle {
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 50%;
+    align-self: center;
+
+}
+
+.leftPane {
+    width: 50%;
+    .TimeLineItem {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+.rightPane {
+    width: 50%;
+    overflow: hidden;
+    .TimeLineItem {
+        border-left: solid 1px rgba(0,0,0,0.2);
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
