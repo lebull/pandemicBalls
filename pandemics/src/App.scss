@@ -1,0 +1,13 @@
+.CenterLine{
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 24px 0px;
+}
+
+.TimeLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: hsl(180deg, 100%, 90);
+}

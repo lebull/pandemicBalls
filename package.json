@@ -1,0 +1,22 @@
+{
+  "name": "timelineswithscale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lebull/timelinesWithScale.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lebull/timelinesWithScale/issues"
+  },
+  "homepage": "https://github.com/lebull/timelinesWithScale#readme",
+  "dependencies": {
+    "node-sass": "^4.14.0"
+  }
+}
