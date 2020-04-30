@@ -10,7 +10,7 @@ const validEvent = (event) => {
 
 const EventInfo = (props) => {
     return(
-        <div class="Info">
+        <div className="Info">
             <h1>{props.event.name}</h1>
             <p>{props.event.date}</p>
             <p>{props.event.location} - {props.event.disease}</p>
@@ -21,7 +21,7 @@ const EventInfo = (props) => {
 
 const EventCircle = (props) => {
 
-    const scaleSize = (event, threedee=false) => {
+    const scaleSize = (event, threedee=true) => {
 
         let returnStyle = {};
 
@@ -30,8 +30,9 @@ const EventCircle = (props) => {
 
         if(threedee){
             pxScale = 0.1;
-            circleSize = (event.minDeaths/pxScale)**(1/3);
-            returnStyle.boxShadow = `inset -${circleSize/4}px -${circleSize/4}px ${circleSize/3}px rgba(0,0,0,0.8)`
+            circleSize = (Math.round(event.minDeaths/pxScale))**(1/3);
+            returnStyle.boxShadow = `inset -${circleSize/4}px -${circleSize/4}px ${circleSize/3}px rgba(0,0,0,0.8)`;
+            returnStyle.border = "none";
         }
 
         let circleSizeCss = `${circleSize}px`;
@@ -42,7 +43,7 @@ const EventCircle = (props) => {
         }
     }
 
-    return (<div class="Circle" style={scaleSize(props.event)}/>);
+    return (<div className="Circle" style={scaleSize(props.event)}/>);
 
 }
 
@@ -56,8 +57,8 @@ const TimeLineItem = (props) => {
 }
 const TimeLineItems = () =>
     <div className="TimeLineItems">
-        {pandemics.filter(validEvent).map((event) =>
-            <TimeLineItem event={event} />
+        {pandemics.filter(validEvent).map((event, index) =>
+            <TimeLineItem key={index} event={event} />
         )}
     </div>;
 

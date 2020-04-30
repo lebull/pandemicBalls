@@ -32,13 +32,16 @@ $lineWidth: 8px;
 
 .TimeLineItem {
 
-    h1, h2, h3, h4 {
-        font-family: "Exo 2";
-        margin: 0;
-    }
-
-    p {
-        margin: 0;
+    .Info{
+        h1, h2, h3, h4 {
+            font-family: "Exo 2";
+            margin: 0;
+        }
+    
+        p {
+            margin: 0;
+        }
+        margin-bottom: 25px;
     }
 
     display: flex;
@@ -53,7 +56,7 @@ $lineWidth: 8px;
     background-color: rgba(255, 0, 0, 1);
     border-radius: 50%;
     align-self: center;
-    border: solid 1px #000;
+    border: solid 3px rgba(0,0,0,0.3);
 
 }
 
@@ -61,7 +64,16 @@ $lineWidth: 8px;
     width: 50%;
 
     @media screen and (max-width: 1080px){
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
         width: 100%;
+
+        .Info{
+            background-color: rgba(0,2,3,0.4);
+            border-radius: 20px;
+            padding: 20px;
+        }
     }
 
     .TimeLineItem {
@@ -72,22 +84,32 @@ $lineWidth: 8px;
         align-items: center;
         text-align: center;
         
-        height: 100vh;
         padding-top: 100px;
         margin-bottom: -100px;
+
+        padding-top: 10px;
+
     }
+
 }
 
 .rightPane {
     width: 50%;
     @media screen and (max-width: 1080px){
         width: 100%;
+        margin-top: -100%;
+        .TimeLineItem {
+            padding-top: 100px;
+            margin-bottom: -100px;
+    
+        }
     }
     .TimeLineItem {
         border-left: solid 1px rgba(0,0,0,0.2);
         align-items: center;
         text-align: center;
         margin: 100px;
+        justify-content: flex-end;
     }
 }
 
