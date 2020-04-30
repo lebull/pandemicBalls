@@ -11,7 +11,8 @@ const validEvent = (event) => {
 const EventInfo = (props) => {
     return(
         <div class="Info">
-            <h1>{props.event.name} ({props.event.date})</h1>
+            <h1>{props.event.name}</h1>
+            <p>{props.event.date}</p>
             <p>{props.event.location} - {props.event.disease}</p>
             <p>{props.event.deaths} deaths</p>
         </div>
@@ -20,14 +21,24 @@ const EventInfo = (props) => {
 
 const EventCircle = (props) => {
 
-    const scaleSize = (event) => {
-        const pxScale = 40;
+    const scaleSize = (event, threedee=false) => {
+
+        let returnStyle = {};
+
+        let pxScale = 20;
         let circleSize = (event.minDeaths/pxScale)**(1/2);
+
+        if(threedee){
+            pxScale = 0.1;
+            circleSize = (event.minDeaths/pxScale)**(1/3);
+            returnStyle.boxShadow = `inset -${circleSize/4}px -${circleSize/4}px ${circleSize/3}px rgba(0,0,0,0.8)`
+        }
+
         let circleSizeCss = `${circleSize}px`;
         return {
+            ...returnStyle,
             width : circleSizeCss,
             height : circleSizeCss,
-            boxShadow : `inset -${circleSize/4}px -${circleSize/4}px ${circleSize/2}px rgba(0,0,0,0.8)`
         }
     }
 

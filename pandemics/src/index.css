@@ -1,5 +1,5 @@
 html {
-  background-color: #010911;
+  background-color: #000408;
   color: rgb(240, 239, 230);
 }
 body {
@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
