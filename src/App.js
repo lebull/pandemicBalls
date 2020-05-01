@@ -3,6 +3,9 @@ import './App.scss';
 import { pandemics } from './pandemics';
 import ReactFullpage from '@fullpage/react-fullpage';
 
+const getAnchor = (event) => {
+    return encodeURI(event.name);
+}
 
 const validEvent = (event) => {
     return event.name && event.deaths && event.minDeaths && event.minDeaths > 100000;
@@ -56,7 +59,7 @@ const EventCircle = (props) => {
 
 const TimeLineItem = (props) => {
     return (
-        <div class="section">
+        <div className="section" data-anchor={getAnchor(props.event)}>
             <div className="TimeLineItem">
                 <EventInfo event={props.event} />
                 <EventCircle event={props.event} />
@@ -73,13 +76,19 @@ const TimeLineItems = () =>
 
 
 const App = () => {
-    const latestEvent = pandemics[pandemics.length - 1];
+    let navigationTooltips = pandemics.filter(validEvent).map((pandemic)=>pandemic.name);
+    let anchors = pandemics.filter(validEvent).map(getAnchor)
     return (
         <ReactFullpage
-            className="TimeLine"
+            className={"TimeLine"}
             licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
-            bigSectionsDestination="top"
+            bigSectionsDestination={"top"}
             scrollingSpeed={1000}
+            scrollBar={true}
+            navigation={true}
+            navigationTooltips={navigationTooltips}
+            recordHistory={false}
+            anchors={anchors}
             render={
                 ({ state, fullpageApi }) => {
                     return(
@@ -88,7 +97,6 @@ const App = () => {
                             <ReactFullpage.Wrapper>
                                 <TimeLineItems/>
                             </ReactFullpage.Wrapper>
-                            <TimeLineItem event={latestEvent} />
                         </div>
                     )
                 }
