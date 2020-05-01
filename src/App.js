@@ -76,7 +76,7 @@ const TimeLineItems = () =>
 
 
 const App = () => {
-    let navigationTooltips = pandemics.filter(validEvent).map((pandemic)=>pandemic.name);
+    // let navigationTooltips = pandemics.filter(validEvent).map((pandemic)=>pandemic.name);
     let anchors = pandemics.filter(validEvent).map(getAnchor)
     return (
         <ReactFullpage
@@ -85,8 +85,8 @@ const App = () => {
             bigSectionsDestination={"top"}
             scrollingSpeed={1000}
             scrollBar={true}
-            navigation={true}
-            navigationTooltips={navigationTooltips}
+            navigation={false}
+            // navigationTooltips={navigationTooltips}
             recordHistory={false}
             anchors={anchors}
             render={
