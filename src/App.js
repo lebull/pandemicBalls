@@ -21,16 +21,16 @@ const EventInfo = (props) => {
 
 const EventCircle = (props) => {
 
-    const scaleSize = (event, threedee = true) => {
+    const scaleSize = (eventscale, threedee = true) => {
 
         let returnStyle = {};
 
         let pxScale = 20;
-        let circleSize = (event.minDeaths / pxScale) ** (1 / 2);
+        let circleSize = (eventscale / pxScale) ** (1 / 2);
 
         if (threedee) {
-            pxScale = 2;
-            circleSize = (Math.round(event.minDeaths / pxScale)) ** (1 / 3);
+            pxScale = 1.4;
+            circleSize = (Math.round(eventscale / pxScale)) ** (1 / 3);
             returnStyle.boxShadow = `inset -${circleSize / 4}px -${circleSize / 4}px ${circleSize / 3}px rgba(0,0,0,0.8)`;
             returnStyle.border = "none";
         }
@@ -43,8 +43,15 @@ const EventCircle = (props) => {
         }
     }
 
-    return (<div className="Circle" style={scaleSize(props.event)} />);
+    if(props.event.maxDeaths){
+        return (
+            <div className="Circle transparent" style={scaleSize(props.event.maxDeaths)}>
+                <div className="Circle" style={scaleSize(props.event.minDeaths)} />
+            </div>
+        );
+    }
 
+    return <div className="Circle" style={scaleSize(props.event.minDeaths)} />;
 }
 
 const TimeLineItem = (props) => {
