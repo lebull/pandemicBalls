@@ -84,7 +84,6 @@ const App = () => {
             licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
             bigSectionsDestination={"top"}
             scrollingSpeed={1000}
-            scrollBar={true}
             navigation={false}
             // navigationTooltips={navigationTooltips}
             recordHistory={false}
