@@ -22,7 +22,7 @@ const App = () => {
             render={
                 ({ state, fullpageApi }) => {
                     return(
-                        <div>
+                        <div data-testid="timeline">
                             <ReactFullpage.Wrapper>
                                 <EventCollection events={pandemics.filter(validPandemic)} renderMode="threedee"/>
                             </ReactFullpage.Wrapper>
