@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { EventCollection } from './components/timeLineWithScale/EventCollection';
+import { EventCollection } from './components/events/Event';
 import { pandemics } from './pandemics';
 
 const validPandemic= (event) => {

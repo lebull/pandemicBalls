@@ -1,6 +1,17 @@
 import React from 'react';
 
-export const Event = (props) => {
+export const RenderMode = {
+    threedee: "threedee"
+}
+
+export const EventCollection = (props) =>
+    <div className="TimeLineItems">
+        {props.events.map((event, index) =>
+            <Event key={index} event={event} renderMode={props.renderMode} />
+        )}
+    </div>;
+
+const Event = (props) => {
     return (
         <div className="section">
             <div className="TimeLineItem">
@@ -9,10 +20,6 @@ export const Event = (props) => {
             </div>
         </div>
     )
-}
-
-export const RenderMode = {
-    threedee: "threedee"
 }
 
 const EventInfo = (props) => {
