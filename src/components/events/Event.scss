@@ -29,7 +29,6 @@
     background-color: rgba(255, 71, 0, 1);
     border-radius: 50%;
     align-self: center;
-    border: solid 3px rgba(0,0,0,0.2);
 
     &.transparent{
         background-color: rgba(255, 71, 0, 0.6);
@@ -39,5 +38,5 @@
         }
     }
 
-    transition: width 1s, height 1s, box-shadow 1s, border 1s;
+    transition: width 1s, height 1s, box-shadow 1s;
 }

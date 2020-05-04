@@ -47,7 +47,6 @@ const EventCircle = (props) => {
             pxScale = 1.4;
             circleSize = (Math.round(eventscale / pxScale)) ** (1 / 3);
             returnStyle.boxShadow = `inset -${circleSize / 4}px -${circleSize / 4}px ${circleSize / 3}px rgba(0,0,0,0.8)`;
-            returnStyle.border = "none";
         }
 
         let circleSizeCss = `${circleSize}px`;
