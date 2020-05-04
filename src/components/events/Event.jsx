@@ -40,7 +40,7 @@ const EventCircle = (props) => {
 
         let returnStyle = {};
 
-        let pxScale = 20;
+        let pxScale = 500;
         let circleSize = (eventscale / pxScale) ** (1 / 2);
 
         if (props.renderMode === RenderMode.threedee) {

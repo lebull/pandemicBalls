@@ -1,6 +1,6 @@
 import React from 'react';
 import './TopBar.scss';
-import { Link, LinkSet } from './Link';
+import { LinkSet } from './Link';
 import {ModeContext} from '../../../App';
 
 export const TopBar = () => {

@@ -18,7 +18,6 @@ class App extends React.Component {
             toggleMode: () => this.setState(state => ({
                 mode: state.mode === "threedee" ? "twodee" : "threedee"
             }))
-            
         });
 
     }
