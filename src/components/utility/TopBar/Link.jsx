@@ -20,7 +20,7 @@ export class LinkSet extends React.Component {
 
     render(){
         return(
-            <div class="LinkSet">
+            <div className="LinkSet">
                 { this.props.children }
             </div>
         );
