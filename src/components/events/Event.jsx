@@ -1,11 +1,12 @@
 import React from 'react';
+import './Event.scss';
 
 export const RenderMode = {
     threedee: "threedee"
 }
 
 export const EventCollection = (props) =>
-    <div className="TimeLineItems">
+    <div>
         {props.events.map((event, index) =>
             <Event key={index} event={event} renderMode={props.renderMode} />
         )}
@@ -14,7 +15,7 @@ export const EventCollection = (props) =>
 const Event = (props) => {
     return (
         <div className="section">
-            <div className="TimeLineItem">
+            <div className="Event">
                 <EventInfo event={props.event} />
                 <EventCircle event={props.event} renderMode={props.renderMode}/>
             </div>
@@ -39,14 +40,13 @@ const EventCircle = (props) => {
 
         let returnStyle = {};
 
-        let pxScale = 20;
+        let pxScale = 500;
         let circleSize = (eventscale / pxScale) ** (1 / 2);
 
         if (props.renderMode === RenderMode.threedee) {
-            pxScale = 1.4;
+            pxScale = 5;
             circleSize = (Math.round(eventscale / pxScale)) ** (1 / 3);
             returnStyle.boxShadow = `inset -${circleSize / 4}px -${circleSize / 4}px ${circleSize / 3}px rgba(0,0,0,0.8)`;
-            returnStyle.border = "none";
         }
 
         let circleSizeCss = `${circleSize}px`;

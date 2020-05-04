@@ -1,37 +1,35 @@
 import React from 'react';
 import './App.scss';
-import ReactFullpage from '@fullpage/react-fullpage';
-import { EventCollection } from './components/events/Event';
-import { pandemics } from './pandemics';
+// import { FullPageList } from './components/layout/FullPageList';
+import { StackList } from './components/layout/StackList/StackList';
+import { TopBar } from './components/utility/TopBar/TopBar';
 
-const validPandemic= (event) => {
-    return event.name && event.deaths && event.minDeaths && event.minDeaths > 100000;
-}
+export const ModeContext = React.createContext({
+    mode: "threedee", 
+    toggleMode: () => {}
+});
 
-const App = () => {
-    return (
-        <ReactFullpage
-            className={"TimeLine"}
-            licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
-            bigSectionsDestination={"top"}
-            scrollingSpeed={1000}
-            navigation={false}
-            // navigationTooltips={navigationTooltips}
-            recordHistory={false}
-            // anchors={anchors}
-            render={
-                ({ state, fullpageApi }) => {
-                    return(
-                        <div data-testid="timeline">
-                            <ReactFullpage.Wrapper>
-                                <EventCollection events={pandemics.filter(validPandemic)} renderMode="threedee"/>
-                            </ReactFullpage.Wrapper>
-                        </div>
-                    )
-                }
-            }
+class App extends React.Component {
+    constructor(props) {
+        super(props);
 
-        />
-    );
+        this.state = ({
+            mode: "threedee",
+            toggleMode: () => this.setState(state => ({
+                mode: state.mode === "threedee" ? "twodee" : "threedee"
+            }))
+        });
+
+    }
+    render(){
+        return (
+            <div data-testid="timeline">
+                <ModeContext.Provider value={this.state}>
+                    <TopBar />
+                    <StackList/>
+                </ModeContext.Provider>
+            </div>
+        );
+    }
 }
 export default App;

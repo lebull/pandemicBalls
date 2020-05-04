@@ -1,0 +1,42 @@
+.Event {
+    font-family: "PT Sans";
+    h1, h2, h3, h4 {
+        font-family: "Exo 2";
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .Info{
+        text-align: center;
+        padding: 2em 1em 0em 1em;
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+        margin-bottom: 25px;
+    }
+}
+
+
+.Circle {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(255, 71, 0, 1);
+    border-radius: 50%;
+    align-self: center;
+
+    &.transparent{
+        background-color: rgba(255, 71, 0, 0.6);
+        
+        .Circle {
+            mix-blend-mode: darken;
+        }
+    }
+
+    transition: width 1s, height 1s, box-shadow 1s;
+}
