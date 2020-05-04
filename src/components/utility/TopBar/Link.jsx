@@ -6,7 +6,6 @@ export const Link = (props) => {
     )
 }
 
-
 export class LinkSet extends React.Component {
 
     constructor(props){
