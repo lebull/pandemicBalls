@@ -23,7 +23,7 @@ export const FullPageList = () => {
                     return(
                         <div>
                             <ReactFullpage.Wrapper>
-                                <EventCollection events={pandemics.filter(validPandemic)} renderMode="threedee"z/>
+                                <EventCollection events={pandemics.filter(validPandemic)} renderMode="threedee"/>
                             </ReactFullpage.Wrapper>
                         </div>
                     )
