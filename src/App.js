@@ -4,7 +4,7 @@ import { FullPageList } from './components/layout/FullPageList'
 
 const App = () => {
     return (
-        <div data-testId="timeline">
+        <div data-testid="timeline">
             <FullPageList/>
         </div>
     );
