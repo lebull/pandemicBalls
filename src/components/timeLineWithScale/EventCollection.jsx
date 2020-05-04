@@ -1,7 +1,5 @@
 import React from 'react';
-import { pandemics } from '../../pandemics';
 import { Event } from './Event';
-
 
 export const EventCollection = (props) =>
     <div className="TimeLineItems">
