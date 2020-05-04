@@ -1,11 +1,12 @@
 import React from 'react';
+import './Event.scss';
 
 export const RenderMode = {
     threedee: "threedee"
 }
 
 export const EventCollection = (props) =>
-    <div className="TimeLineItems">
+    <div>
         {props.events.map((event, index) =>
             <Event key={index} event={event} renderMode={props.renderMode} />
         )}
@@ -14,7 +15,7 @@ export const EventCollection = (props) =>
 const Event = (props) => {
     return (
         <div className="section">
-            <div className="TimeLineItem">
+            <div className="Event">
                 <EventInfo event={props.event} />
                 <EventCircle event={props.event} renderMode={props.renderMode}/>
             </div>
