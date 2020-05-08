@@ -1,3 +1,5 @@
+@import "../../../theme.scss";
+
 .TopBar {
     position: sticky;
     top: 0;
@@ -28,7 +30,7 @@
 }
 
 button {
-	background-color:#5359a2;
+	background-color: $primary;
     border-radius:8px;
     border-width: 0px;
 	display:inline-block;
