@@ -13,7 +13,7 @@ export const StackList = () => {
         <div className="stackList">
             <ModeContext.Consumer>
                 {({mode}) => (
-                    <EventCollection events={pandemics.filter(validPandemic)} renderMode={mode} />
+                    <EventCollection events={pandemics.filter(validPandemic).reverse()} renderMode={mode} />
                 )}
             </ModeContext.Consumer>
         </div>
