@@ -2131,14 +2131,5 @@ export const pandemics = [
         "date": "2019–present",
         "name": "2019–20 dengue fever epidemic",
         "disease": "Dengue fever"
-    },
-    {
-        "deaths": "227,755 (As of 29 April 2020)",
-        "minDeaths": 227755,
-        "maxDeaths": null,
-        "location": "Worldwide",
-        "date": "2019–present",
-        "name": "2019–20 coronavirus pandemic",
-        "disease": "COVID-19 / SARS-CoV-2"
     }
 ]
