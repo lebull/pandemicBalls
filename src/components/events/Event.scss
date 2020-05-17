@@ -1,6 +1,7 @@
 @import "../../theme.scss";
 
 .Event {
+    margin: 0px 20px 20px;
     font-family: "PT Sans";
     h1, h2, h3, h4 {
         font-family: "Exo 2";
@@ -11,6 +12,9 @@
     justify-content: center;
 
     .Info{
+        // display: none;
+        overflow: visible;
+        // transform: rotate(-90deg);
         text-align: center;
         padding: 4em 1em 0.5em 1em;
         h1, h2, h3, h4 {
@@ -34,6 +38,10 @@
     &.transparent{
         background-color: transparentize($ball, .4);
 
+    }
+
+    &.currentEvent{
+        background-color: $currentEvent;
     }
 
     transition: width 1s, height 1s, box-shadow 1s;

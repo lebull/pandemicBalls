@@ -1,7 +1,8 @@
 @import "../../../theme.scss";
 
 .TopBar {
-    position: sticky;
+    position: absolute;
+    width: 100vw;
     top: 0;
     z-index: 100;
 
