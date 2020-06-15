@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 // import { FullPageList } from './components/layout/FullPageList';
-import { StackList } from './components/layout/StackList/StackList';
+import { List as PandemicList } from './components/layout/Pandemics/List';
 import { TopBar } from './components/utility/TopBar/TopBar';
 
 export const ModeContext = React.createContext({
@@ -26,7 +26,7 @@ class App extends React.Component {
             <div data-testid="timeline">
                 <ModeContext.Provider value={this.state}>
                     <TopBar />
-                    <StackList/>
+                    <PandemicList />
                 </ModeContext.Provider>
             </div>
         );

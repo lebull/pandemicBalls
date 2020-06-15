@@ -21,11 +21,9 @@ export const FullPageList = () => {
             render={
                 ({ state, fullpageApi }) => {
                     return(
-                        <div>
-                            <ReactFullpage.Wrapper>
-                                <EventCollection events={pandemics.filter(validPandemic)} renderMode="threedee"/>
-                            </ReactFullpage.Wrapper>
-                        </div>
+                        <ReactFullpage.Wrapper>
+                            <EventCollection events={pandemics.filter(validPandemic)} renderMode="threedee"/>
+                        </ReactFullpage.Wrapper>
                     )
                 }
             }

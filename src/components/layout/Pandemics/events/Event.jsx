@@ -13,11 +13,10 @@ export const EventCollection = (props) => (
 
 const Event = (props) => {
     return (
-        <div className="section">
-            <div className="Event">
-                <EventInfo event={props.event} />
-                <EventCircle event={props.event} renderMode={props.renderMode}/>
-            </div>
+        <div className="Event">
+            <EventInfo event={props.event} />
+            <EventCircle event={props.event} renderMode={props.renderMode}/>
+            <EventSubInfo event={props.event} />
         </div>
     )
 }
@@ -26,9 +25,17 @@ const EventInfo = (props) => {
     return (
         <div className="Info">
             <h1>{props.event.name}</h1>
-            {/* <p>{props.event.date}</p>
-            <p>{props.event.location} - {props.event.disease}</p>
-            <p>{props.event.deaths} deaths</p> */}
+        </div>
+    )
+}
+
+const EventSubInfo = (props) => {
+    return (
+        <div className="SubInfo">
+            <p>{props.event.date}</p>
+            <p>{props.event.disease}</p>
+            <p>{props.event.location}</p>
+            <p>{props.event.deaths} deaths</p>
         </div>
     )
 }
@@ -59,12 +66,18 @@ const EventCircle = (props) => {
     if(props.event.maxDeaths){
         let currentEventClass = props.currentEvent ? "currentEvent" : "";
         return (
-            <div className={`Circle transparent ${currentEventClass}`} style={scaleSize(props.event.maxDeaths)}>
-                <div className="Circle" style={scaleSize(props.event.minDeaths)} />
+            <div className="CircleWrapper">
+                <div className={`Circle transparent ${currentEventClass}`} style={scaleSize(props.event.maxDeaths)}>
+                    <div className="Circle" style={scaleSize(props.event.minDeaths)} />
+                </div>
             </div>
         );
     }
 
-    return <div className="Circle" style={scaleSize(props.event.minDeaths)} />;
+    return (
+        <div className="CircleWrapper">
+            <div className="Circle" style={scaleSize(props.event.minDeaths)} />
+        </div>
+    );
 }
 

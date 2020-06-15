@@ -1,7 +1,7 @@
 import React from 'react';
-import { EventCollection } from '../../events/Event';
+import { EventCollection } from './events/Event';
 import { pandemics } from '../../../pandemics';
-import './StackList.scss';
+import './List.scss';
 import {ModeContext} from '../../../App';
 import NovelCovid from 'novelcovid';
 
@@ -9,7 +9,7 @@ const validPandemic = (event) => {
     return event.name && event.deaths && event.minDeaths && event.minDeaths > 10000;
 }
 
-export class StackList extends React.Component {
+export class List extends React.Component {
 
     state = {
         coronavirus: {
@@ -39,7 +39,7 @@ export class StackList extends React.Component {
                 "location": "Worldwide",
                 "date": "2019-...",
                 "name": "COVID-19 Pandemic",
-                "disease": "COVID-19 / SARS-CoV-2"
+                "disease": "COVID-19 / SARS-CoV-2",
             }
         });
     }
@@ -52,7 +52,7 @@ export class StackList extends React.Component {
 
     render(){
         return (
-            <div className="stackList">
+            <div className="pandemicList">
                 <ModeContext.Consumer>
                     {({mode}) => (
                         <EventCollection events={[this.state.coronavirus, ...this.state.otherPandemics]} renderMode={mode} />
