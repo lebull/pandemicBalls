@@ -6,7 +6,7 @@ import {ModeContext} from '../../../App';
 import NovelCovid from 'novelcovid';
 
 const validPandemic = (event) => {
-    return event.name && event.deaths && event.minDeaths && event.minDeaths > 100000;
+    return event.name && event.deaths && event.minDeaths && event.minDeaths > 10000;
 }
 
 export class StackList extends React.Component {
@@ -18,7 +18,7 @@ export class StackList extends React.Component {
             "maxDeaths": null,
             "location": "Worldwide",
             "date": "2019–present",
-            "name": "2019–20 coronavirus pandemic",
+            "name": "COVID-19 Pandemic",
             "disease": "COVID-19 / SARS-CoV-2"
         },
         otherPandemics:pandemics.filter(validPandemic).reverse()
@@ -37,8 +37,8 @@ export class StackList extends React.Component {
                 "minDeaths": newTotal,
                 "maxDeaths": null,
                 "location": "Worldwide",
-                "date": "2019–present",
-                "name": "2019–20 coronavirus pandemic",
+                "date": "2019-...",
+                "name": "COVID-19 Pandemic",
                 "disease": "COVID-19 / SARS-CoV-2"
             }
         });
