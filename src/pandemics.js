@@ -1706,7 +1706,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Pakistan",
         "date": 2006,
-        "name": "2006 dengue outbreak in Pakistan",
+        "name": "Dengue outbreak in Pakistan",
         "disease": "Dengue fever"
     },
     {
@@ -1715,7 +1715,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Philippines",
         "date": 2006,
-        "name": null,
+        "name": "Dengue fever",
         "disease": "Dengue fever"
     },
     {
@@ -1724,7 +1724,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "East Africa",
         "date": 2006,
-        "name": "2006–07 East Africa Rift Valley fever outbreak",
+        "name": "East Africa Rift Valley fever outbreak",
         "disease": "Rift Valley fever"
     },
     {
@@ -1742,7 +1742,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Ethiopia",
         "date": 2007,
-        "name": null,
+        "name": "Cholera",
         "disease": "Cholera"
     },
     {
@@ -1751,7 +1751,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "India",
         "date": 2008,
-        "name": null,
+        "name": "Cholera",
         "disease": "Cholera"
     },
     {
@@ -1760,7 +1760,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Iraq",
         "date": 2007,
-        "name": "2007 Iraq cholera outbreak",
+        "name": "Cholera Outbreak",
         "disease": "Cholera"
     },
     {
@@ -1769,7 +1769,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Nigeria",
         "date": 2007,
-        "name": null,
+        "name": "Poliomyelitis",
         "disease": "Poliomyelitis"
     },
     {
@@ -1778,7 +1778,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Puerto Rico; Dominican Republic; Mexico",
         "date": 2007,
-        "name": null,
+        "name": "Dengue fever",
         "disease": "Dengue fever"
     },
     {
@@ -1787,7 +1787,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Somalia",
         "date": 2007,
-        "name": null,
+        "name": "Cholera",
         "disease": "Cholera"
     },
     {
@@ -1796,7 +1796,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Uganda",
         "date": 2007,
-        "name": null,
+        "name": "Ebola",
         "disease": "Ebola"
     },
     {
@@ -1805,7 +1805,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Vietnam",
         "date": 2007,
-        "name": null,
+        "name": "Cholera",
         "disease": "Cholera"
     },
     {
@@ -1814,7 +1814,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Brazil",
         "date": 2008,
-        "name": null,
+        "name": "Dengue fever",
         "disease": "Dengue fever"
     },
     {
@@ -1823,7 +1823,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Cambodia",
         "date": 2008,
-        "name": null,
+        "name": "Dengue fever",
         "disease": "Dengue fever"
     },
     {
@@ -1832,7 +1832,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Chad",
         "date": 2008,
-        "name": null,
+        "name": "Cholera",
         "disease": "Cholera"
     },
     {
@@ -1841,7 +1841,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "China",
         "date": "2008–2017",
-        "name": null,
+        "name": "Hand, foot, and mouth disease",
         "disease": "Hand, foot, and mouth disease"
     },
     {
@@ -1850,7 +1850,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Madagascar",
         "date": 2008,
-        "name": null,
+        "name": "Bubonic plague",
         "disease": "Bubonic plague"
     },
     {
@@ -1859,7 +1859,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Philippines",
         "date": 2008,
-        "name": null,
+        "name": "Dengue fever",
         "disease": "Dengue fever"
     },
     {
@@ -1868,7 +1868,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Vietnam",
         "date": 2008,
-        "name": null,
+        "name": "Cholera",
         "disease": "Cholera"
     },
     {
@@ -1877,7 +1877,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Zimbabwe",
         "date": "2008–2009",
-        "name": "2008–09 Zimbabwean cholera outbreak",
+        "name": "Zimbabwean cholera outbreak",
         "disease": "Cholera"
     },
     {
@@ -1886,7 +1886,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Bolivia",
         "date": 2009,
-        "name": "2009 Bolivian dengue fever epidemic",
+        "name": "Bolivian dengue fever epidemic",
         "disease": "Dengue fever"
     },
     {
@@ -1895,7 +1895,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "India",
         "date": 2009,
-        "name": "2009 Gujarat hepatitis outbreak",
+        "name": "Gujarat hepatitis outbreak",
         "disease": "Hepatitis B"
     },
     {
@@ -1904,7 +1904,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Queensland, Australia",
         "date": 2009,
-        "name": null,
+        "name": "Dengue fever",
         "disease": "Dengue fever"
     },
     {
@@ -1913,7 +1913,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Worldwide",
         "date": 2009,
-        "name": "Mumps outbreaks in the 2000s",
+        "name": "Mumps outbreaks",
         "disease": "Mumps"
     },
     {
@@ -1922,7 +1922,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "West Africa",
         "date": "2009–2010",
-        "name": "2009–10 West African meningitis outbreak",
+        "name": "2009–10",
         "disease": "Meningitis"
     },
     {
@@ -1931,7 +1931,7 @@ export const pandemics = [
         "maxDeaths": 575400,
         "location": "Worldwide",
         "date": "2009–2010",
-        "name": "2009 flu pandemic (informally called \"swine flu\")",
+        "name": "Swine Flu",
         "disease": "Pandemic H1N1/09 virus"
     },
     {
@@ -1967,7 +1967,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Pakistan",
         "date": 2011,
-        "name": "2011 dengue outbreak in Pakistan",
+        "name": "dengue outbreak in Pakistan",
         "disease": "Dengue fever"
     },
     {
@@ -1976,7 +1976,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Darfur Sudan",
         "date": 2012,
-        "name": "2012 yellow fever outbreak in Darfur, Sudan",
+        "name": "yellow fever outbreak in Darfur, Sudan",
         "disease": "Yellow fever"
     },
     {
@@ -1985,7 +1985,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Worldwide",
         "date": "2012–present",
-        "name": "2012 Middle East respiratory syndrome coronavirus outbreak",
+        "name": "Middle East respiratory syndrome coronavirus outbreak",
         "disease": "Middle East respiratory syndrome (MERS)"
     },
     {
@@ -2003,7 +2003,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Worldwide, primarily concentrated in Guinea, Liberia, Sierra Leone",
         "date": "2013–2016",
-        "name": "Ebola virus epidemic in West Africa",
+        "name": "Ebola virus epidemic",
         "disease": "Ebola virus disease\nEbola virus virion"
     },
     {
@@ -2012,7 +2012,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Americas",
         "date": "2013–2015",
-        "name": "2013–14 chikungunya outbreak",
+        "name": "chikungunya outbreak",
         "disease": "Chikungunya"
     },
     {
@@ -2021,7 +2021,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Madagascar",
         "date": "2014–2017",
-        "name": "2014 Madagascar plague outbreak",
+        "name": "Madagascar plague outbreak",
         "disease": "Bubonic plague"
     },
     {
@@ -2030,7 +2030,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "India",
         "date": "2014–2015",
-        "name": "2014 Odisha jaundice outbreak",
+        "name": "Odisha jaundice outbreak",
         "disease": "Primarily Hepatitis E, but also Hepatitis A"
     },
     {
@@ -2039,7 +2039,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "India",
         "date": 2015,
-        "name": "2015 Indian swine flu outbreak",
+        "name": "Indian swine flu outbreak",
         "disease": "Influenza A virus subtype H1N1"
     },
     {
@@ -2048,7 +2048,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Worldwide",
         "date": "2015–2016",
-        "name": "2015–16 Zika virus epidemic",
+        "name": "Zika virus epidemic",
         "disease": "Zika virus"
     },
     {
@@ -2057,7 +2057,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Angola, DR Congo, China, Kenya",
         "date": 2016,
-        "name": "2016 yellow fever outbreak in Angola",
+        "name": "yellow fever outbreak in Angola",
         "disease": "Yellow fever"
     },
     {
@@ -2066,7 +2066,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Yemen",
         "date": "2016–present",
-        "name": "2016–20 Yemen cholera outbreak",
+        "name": "Yemen cholera outbreak",
         "disease": "Cholera"
     },
     {
@@ -2075,7 +2075,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "India",
         "date": 2017,
-        "name": "2017 Gorakhpur Japanese encephalitis outbreak",
+        "name": "Gorakhpur Japanese encephalitis outbreak",
         "disease": "Japanese encephalitis"
     },
     {
@@ -2084,7 +2084,7 @@ export const pandemics = [
         "maxDeaths": 80000,
         "location": "United States",
         "date": "2017–2018",
-        "name": "2017–18 United States flu season",
+        "name": "Severe Flu Season",
         "disease": "Seasonal influenza"
     },
     {
@@ -2093,7 +2093,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "India",
         "date": 2018,
-        "name": "2018 Nipah virus outbreak in Kerala",
+        "name": "Nipah virus outbreak in Kerala",
         "disease": "Nipah virus infection"
     },
     {
@@ -2102,7 +2102,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Democratic Republic of the Congo & Uganda",
         "date": "August 2018–present",
-        "name": "2018–20 Kivu Ebola epidemic",
+        "name": "Kivu Ebola epidemic",
         "disease": "Ebola virus disease"
     },
     {
@@ -2111,7 +2111,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Democratic Republic of the Congo",
         "date": "2019–present",
-        "name": "2019 measles outbreak in the Democratic Republic of the Congo",
+        "name": "measles outbreak in the Democratic Republic of the Congo",
         "disease": "Measles"
     },
     {
@@ -2120,7 +2120,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Samoa",
         "date": "2019–present",
-        "name": "2019 Samoa measles outbreak",
+        "name": "Samoa measles outbreak",
         "disease": "Measles"
     },
     {
@@ -2129,7 +2129,7 @@ export const pandemics = [
         "maxDeaths": null,
         "location": "Asia-Pacific, Latin America",
         "date": "2019–present",
-        "name": "2019–20 dengue fever epidemic",
+        "name": "dengue fever epidemic",
         "disease": "Dengue fever"
     }
 ]
