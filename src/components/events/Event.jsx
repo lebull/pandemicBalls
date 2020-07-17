@@ -34,7 +34,7 @@ export const EventInfo = ({event}) => {
     )
 }
 
-const EventCircle = (props) => {
+export const EventCircle = (props) => {
 
     const scaleSize = (eventscale) => {
 
