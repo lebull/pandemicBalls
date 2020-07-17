@@ -1,8 +1,8 @@
 import React from 'react';
-import { EventCollection } from '../../events/Event';
-import { pandemics } from '../../../pandemics';
+import { Event, EventCollection } from '../events/Event';
+import { pandemics } from '../../pandemics';
 import './StackList.scss';
-import {ModeContext} from '../../../App';
+import { ModeContext } from '../../App';
 import NovelCovid from 'novelcovid';
 
 const validPandemic = (event) => {
@@ -52,13 +52,19 @@ export class StackList extends React.Component {
 
     render(){
         return (
-            <div className="stackList">
-                <ModeContext.Consumer>
-                    {({mode}) => (
-                        <EventCollection events={[this.state.coronavirus, ...this.state.otherPandemics]} renderMode={mode} />
-                    )}
-                </ModeContext.Consumer>
-            </div>
+            
+            <ModeContext.Consumer>
+                {({mode}) => (
+                    <div className="stackList">
+                        <div className="left">
+                            <Event event={this.state.coronavirus} renderMode={mode} />
+                        </div>
+                        <div className="right">
+                            <EventCollection events={[...this.state.otherPandemics]} renderMode={mode} />
+                        </div>
+                    </div>
+                )}
+            </ModeContext.Consumer>
         );
     }
 }

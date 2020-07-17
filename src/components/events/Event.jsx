@@ -5,31 +5,31 @@ export const RenderMode = {
     threedee: "threedee"
 }
 
-export const EventCollection = (props) =>
+export const EventCollection = ({events, renderMode}) =>
     <div>
-        {props.events.map((event, index) =>
-            <Event key={index} event={event} renderMode={props.renderMode} />
+        {events.map((event, index) =>
+            <Event key={index} event={event} renderMode={renderMode} />
         )}
     </div>;
 
-const Event = (props) => {
+export const Event = ({event, renderMode}) => {
     return (
         <div className="section">
             <div className="Event">
-                <EventInfo event={props.event} />
-                <EventCircle event={props.event} renderMode={props.renderMode}/>
+                <EventInfo event={event} />
+                <EventCircle event={event} renderMode={renderMode}/>
             </div>
         </div>
     )
 }
 
-const EventInfo = (props) => {
+export const EventInfo = ({event}) => {
     return (
         <div className="Info">
-            <h1>{props.event.name}</h1>
-            <p>{props.event.date}</p>
-            <p>{props.event.location} - {props.event.disease}</p>
-            <p>{props.event.deaths} deaths</p>
+            <h1>{event.name}</h1>
+            <p>{event.date}</p>
+            <p>{event.location} - {event.disease}</p>
+            <p>{event.deaths} deaths</p>
         </div>
     )
 }

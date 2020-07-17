@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 // import { FullPageList } from './components/layout/FullPageList';
-import { StackList } from './components/layout/StackList/StackList';
+import { StackList } from './components/stackList/StackList';
 import { TopBar } from './components/utility/TopBar/TopBar';
 
 export const ModeContext = React.createContext({
