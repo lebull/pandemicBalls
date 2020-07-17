@@ -29,6 +29,7 @@
 
 
     .event-info{
+        height: 8em;
         font-family: "PT Sans";
         h1, h2, h3, h4 {
             font-family: "Exo 2";
@@ -43,6 +44,16 @@
             margin: 0;
         }
         margin-bottom: 25px;
+        
+        &.active{
+            max-width: 600px;
+            justify-self: center;
+            align-self: center;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            background-color: #222;
+        }
     }
     
     &.left{

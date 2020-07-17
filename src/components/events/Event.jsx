@@ -5,7 +5,7 @@ export const RenderMode = {
     threedee: "threedee"
 }
 
-export const EventCollection = ({ events, renderMode, side = "right", fullPageSection = true }) =>
+export const EventCollection = ({ events, renderMode, side = "right", fullPageSection = true}) =>
     <div className="eventCollection">
         {events.map((event, index) =>
 
@@ -21,24 +21,37 @@ export const EventCollection = ({ events, renderMode, side = "right", fullPageSe
     </div>
 
 
-export const Event = ({ event, renderMode, side = "right", fullPageSection = true }) => {
+export const Event = ({ event, renderMode, side = "right", fullPageSection = true, active=false}) => {
     return (
-        <div className={`Event ${side} ${fullPageSection ? "section" : ""}`}>
-            <EventInfo event={event} />
-            <EventCircle event={event} renderMode={renderMode} />
+        <div className={`Event ${side} ${fullPageSection ? "section" : ""} ${active ? "active" : ""} `}>
+            <EventInfo event={event} active={active}/>
+            <EventCircle event={event} renderMode={renderMode}/>
         </div>
     )
 }
 
-export const EventInfo = ({ event }) => {
-    return (
-        <div className="event-info">
-            <h1>{event.name}</h1>
-            <p>{event.date}</p>
-            <p>{event.location} - {event.disease}</p>
-            <p>{event.deaths} deaths</p>
-        </div>
-    )
+export const EventInfo = ({ event, active=false }) => {
+    if(active){
+        return (
+            <div className="event-info active">
+                <h1 className="currentDeaths">
+                    {event.name}
+                </h1>
+                <h2>{event.deaths} deaths</h2>
+                <p>Compared with other events</p>
+            </div>
+        )
+    }else{
+        return (
+            <div className="event-info">
+                <h1>{event.name}</h1>
+                <p>{event.date}</p>
+                <p>{event.location} - {event.disease}</p>
+                <p>{event.deaths} deaths</p>
+            </div>
+        )
+    }
+
 }
 
 export const EventCircle = (props) => {

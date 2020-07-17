@@ -20,7 +20,7 @@ export class Layout extends React.Component {
             "location": "Worldwide",
             "date": "2019–present",
             "name": "2019–20 coronavirus pandemic",
-            "disease": "COVID-19 / SARS-CoV-2"
+            "disease": "COVID-19 / SARS-CoV-2",
         },
         otherPandemics: pandemics.filter(validPandemic).reverse()
     };
@@ -34,7 +34,7 @@ export class Layout extends React.Component {
     refreshCoronavirus(newTotal) {
         this.setState({
             coronavirus: {
-                "deaths": `${newTotal} as of ${new Date()}`,
+                "deaths": `${newTotal}`,
                 "minDeaths": newTotal,
                 "maxDeaths": null,
                 "location": "Worldwide",
@@ -57,7 +57,13 @@ export class Layout extends React.Component {
                 {({ mode }) => (
                     <div className="stackList">
                         <div className="left">
-                            <Event event={this.state.coronavirus} renderMode={mode} fullPageSection={false} side="left" />
+                            <Event
+                                event={this.state.coronavirus}
+                                renderMode={mode}
+                                fullPageSection={false}
+                                side="left"
+                                active={true}
+                            />
                         </div>
                         <div className="right">
                             <ReactFullpage
