@@ -5,25 +5,32 @@ export const RenderMode = {
     threedee: "threedee"
 }
 
-export const EventCollection = ({events, renderMode}) =>
-    <div>
+export const EventCollection = ({ events, renderMode, side = "right", fullPageSection = true }) =>
+    <div className="eventCollection">
         {events.map((event, index) =>
-            <Event key={index} event={event} renderMode={renderMode} />
-        )}
-    </div>;
 
-export const Event = ({event, renderMode}) => {
+            <Event
+                key={index}
+                event={event}
+                renderMode={renderMode}
+                side={side}
+                fullPageSection={fullPageSection}
+            />
+
+        )}
+    </div>
+
+
+export const Event = ({ event, renderMode, side = "right", fullPageSection = true }) => {
     return (
-        <div className="section">
-            <div className="Event">
-                <EventInfo event={event} />
-                <EventCircle event={event} renderMode={renderMode}/>
-            </div>
+        <div className={`Event ${side} ${fullPageSection ? "section" : ""}`}>
+            <EventInfo event={event} />
+            <EventCircle event={event} renderMode={renderMode} />
         </div>
     )
 }
 
-export const EventInfo = ({event}) => {
+export const EventInfo = ({ event }) => {
     return (
         <div className="event-info">
             <h1>{event.name}</h1>
@@ -57,7 +64,7 @@ export const EventCircle = (props) => {
         }
     }
 
-    if(props.event.maxDeaths){
+    if (props.event.maxDeaths) {
         return (
             <div className="Circle transparent" style={scaleSize(props.event.maxDeaths)}>
                 <div className="Circle" style={scaleSize(props.event.minDeaths)} />

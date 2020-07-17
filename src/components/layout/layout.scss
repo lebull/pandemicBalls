@@ -2,42 +2,18 @@
 
 .stackList{
     .left{
-        position: sticky;
-        top: 0;
-        z-index: 90;
-        margin-top: -$topBar-height;
         height: 100vh;
-        width: 100vw;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .infoWrapper{
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            .event-info{
-                width: 50vw;
-            }
-        }
-
-        .circleWrapper{
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            width: 100vw;
-            mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50.2%, rgba(0, 0, 0, 0.0));
-        }
-    }
-    .right{
         width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        overflow: auto;
-
-        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50.2%, rgba(0, 0, 0, 0.0));
+        position: absolute;
+    }
+    .right{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }

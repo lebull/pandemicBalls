@@ -1,5 +1,5 @@
 import React from 'react';
-import { EventCollection, EventCircle, EventInfo } from '../events/Event';
+import { EventCollection, Event } from '../events/Event';
 import { pandemics } from '../../pandemics';
 import './layout.scss';
 import { ModeContext } from '../../App';
@@ -9,28 +9,6 @@ import ReactFullpage from '@fullpage/react-fullpage';
 const validPandemic = (event) => {
     return event.name && event.deaths && event.minDeaths && event.minDeaths > 100000;
 }
-
-
-const Right = ({ events, renderMode }) =>
-    <ReactFullpage
-        className={"TimeLine"}
-        licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
-        bigSectionsDestination={"top"}
-        scrollingSpeed={1000}
-        navigation={false}
-        recordHistory={false}
-        // anchors={anchors}
-        // navigationTooltips={navigationTooltips}
-
-        render={({ state, fullpageApi }) => 
-            <div>
-                <ReactFullpage.Wrapper>
-                    <EventCollection events={events} renderMode={renderMode} />
-                </ReactFullpage.Wrapper>
-            </div>
-        }
-    />
-
 
 export class Layout extends React.Component {
 
@@ -79,15 +57,24 @@ export class Layout extends React.Component {
                 {({ mode }) => (
                     <div className="stackList">
                         <div className="left">
-                            <div className="infoWrapper">
-                                <EventInfo event={this.state.coronavirus} />
-                            </div>
-                            <div className="circleWrapper">
-                                <EventCircle event={this.state.coronavirus} renderMode={mode} />
-                            </div>
+                            <Event event={this.state.coronavirus} renderMode={mode} fullPageSection={false} side="left" />
                         </div>
                         <div className="right">
-                            <Right events={this.state.otherPandemics} renderMode={this.state.renderMode} />
+                            <ReactFullpage
+                                className={"TimeLine"}
+                                licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
+                                bigSectionsDestination={"top"}
+                                scrollingSpeed={1000}
+                                navigation={false}
+                                recordHistory={false}
+                                // anchors={anchors}
+                                // navigationTooltips={navigationTooltips}
+                                render={({ state, fullpageApi }) =>
+                                    <ReactFullpage.Wrapper>
+                                        <EventCollection events={this.state.otherPandemics} renderMode={mode} />
+                                    </ReactFullpage.Wrapper>
+                                }
+                            />
                         </div>
                     </div>
                 )}
