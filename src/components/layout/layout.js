@@ -1,15 +1,38 @@
 import React from 'react';
-import { Event, EventCollection } from '../events/Event';
+import { EventCollection, EventCircle, EventInfo } from '../events/Event';
 import { pandemics } from '../../pandemics';
-import './StackList.scss';
+import './layout.scss';
 import { ModeContext } from '../../App';
 import NovelCovid from 'novelcovid';
+import ReactFullpage from '@fullpage/react-fullpage';
 
 const validPandemic = (event) => {
     return event.name && event.deaths && event.minDeaths && event.minDeaths > 100000;
 }
 
-export class StackList extends React.Component {
+
+const Right = ({ events, renderMode }) =>
+    <ReactFullpage
+        className={"TimeLine"}
+        licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
+        bigSectionsDestination={"top"}
+        scrollingSpeed={1000}
+        navigation={false}
+        recordHistory={false}
+        // anchors={anchors}
+        // navigationTooltips={navigationTooltips}
+
+        render={({ state, fullpageApi }) => 
+            <div>
+                <ReactFullpage.Wrapper>
+                    <EventCollection events={events} renderMode={renderMode} />
+                </ReactFullpage.Wrapper>
+            </div>
+        }
+    />
+
+
+export class Layout extends React.Component {
 
     state = {
         coronavirus: {
@@ -21,10 +44,10 @@ export class StackList extends React.Component {
             "name": "2019–20 coronavirus pandemic",
             "disease": "COVID-19 / SARS-CoV-2"
         },
-        otherPandemics:pandemics.filter(validPandemic).reverse()
+        otherPandemics: pandemics.filter(validPandemic).reverse()
     };
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.setState();
         this.fetchCoronavirus();
@@ -33,7 +56,7 @@ export class StackList extends React.Component {
     refreshCoronavirus(newTotal) {
         this.setState({
             coronavirus: {
-                "deaths": `${newTotal} (As of ${new Date()})`,
+                "deaths": `${newTotal} as of ${new Date()}`,
                 "minDeaths": newTotal,
                 "maxDeaths": null,
                 "location": "Worldwide",
@@ -44,23 +67,27 @@ export class StackList extends React.Component {
         });
     }
 
-    fetchCoronavirus(){
+    fetchCoronavirus() {
         new NovelCovid().all().then((newTotal) => {
             this.refreshCoronavirus(newTotal.deaths)
         })
     }
 
-    render(){
+    render() {
         return (
-            
             <ModeContext.Consumer>
-                {({mode}) => (
+                {({ mode }) => (
                     <div className="stackList">
                         <div className="left">
-                            <Event event={this.state.coronavirus} renderMode={mode} />
+                            <div className="infoWrapper">
+                                <EventInfo event={this.state.coronavirus} />
+                            </div>
+                            <div className="circleWrapper">
+                                <EventCircle event={this.state.coronavirus} renderMode={mode} />
+                            </div>
                         </div>
                         <div className="right">
-                            <EventCollection events={[...this.state.otherPandemics]} renderMode={mode} />
+                            <Right events={this.state.otherPandemics} renderMode={this.state.renderMode} />
                         </div>
                     </div>
                 )}

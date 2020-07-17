@@ -13,7 +13,23 @@
         align-items: center;
         justify-content: center;
 
-        mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50.2%, rgba(0, 0, 0, 0.0));
+        .infoWrapper{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            .event-info{
+                width: 50vw;
+            }
+        }
+
+        .circleWrapper{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50.2%, rgba(0, 0, 0, 0.0));
+        }
     }
     .right{
         width: 100vw;

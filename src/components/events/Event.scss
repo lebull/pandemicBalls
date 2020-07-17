@@ -1,26 +1,9 @@
 @import "../../theme.scss";
 
 .Event {
-    font-family: "PT Sans";
-    h1, h2, h3, h4 {
-        font-family: "Exo 2";
-    }
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    .Info{
-        text-align: center;
-        padding: 2em 1em 0em 1em;
-        h1, h2, h3, h4 {
-            margin: 0;
-        }
-        p {
-            margin: 0;
-        }
-        margin-bottom: 25px;
-    }
 }
 
 .Circle {
@@ -37,4 +20,21 @@
     }
 
     transition: width 1s, height 1s, box-shadow 1s;
+}
+
+.event-info{
+    font-family: "PT Sans";
+    h1, h2, h3, h4 {
+        font-family: "Exo 2";
+    }
+
+    text-align: center;
+    padding: 2em 1em 0em 1em;
+    h1, h2, h3, h4 {
+        margin: 0;
+    }
+    p {
+        margin: 0;
+    }
+    margin-bottom: 25px;
 }

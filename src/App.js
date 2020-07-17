@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.scss';
-// import { FullPageList } from './components/layout/FullPageList';
-import { StackList } from './components/stackList/StackList';
 import { TopBar } from './components/utility/TopBar/TopBar';
+import { Layout } from './components/layout/layout';
 
 export const ModeContext = React.createContext({
     mode: "threedee", 
@@ -26,7 +25,7 @@ class App extends React.Component {
             <div data-testid="timeline">
                 <ModeContext.Provider value={this.state}>
                     <TopBar />
-                    <StackList/>
+                    <Layout />
                 </ModeContext.Provider>
             </div>
         );

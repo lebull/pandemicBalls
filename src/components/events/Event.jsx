@@ -25,7 +25,7 @@ export const Event = ({event, renderMode}) => {
 
 export const EventInfo = ({event}) => {
     return (
-        <div className="Info">
+        <div className="event-info">
             <h1>{event.name}</h1>
             <p>{event.date}</p>
             <p>{event.location} - {event.disease}</p>
