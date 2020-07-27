@@ -13,7 +13,7 @@ class App extends React.Component {
         super(props);
 
         this.state = ({
-            mode: "threedee",
+            mode: "twodee",
             toggleMode: () => this.setState(state => ({
                 mode: state.mode === "threedee" ? "twodee" : "threedee"
             }))

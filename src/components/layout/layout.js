@@ -10,19 +10,21 @@ const validPandemic = (event) => {
     return event.name && event.deaths && event.minDeaths && event.minDeaths > 100000;
 }
 
+const coronavirus = {
+    "deaths": `null`,
+    "minDeaths": 0,
+    "maxDeaths": null,
+    "location": "Worldwide",
+    "date": "2019–present",
+    "name": "Current Coronavirus Pandemic",
+    "disease": "COVID-19 / SARS-CoV-2",
+};
+
 export class Layout extends React.Component {
 
     state = {
-        coronavirus: {
-            "deaths": `null`,
-            "minDeaths": 0,
-            "maxDeaths": null,
-            "location": "Worldwide",
-            "date": "2019–present",
-            "name": "2019–20 coronavirus pandemic",
-            "disease": "COVID-19 / SARS-CoV-2",
-        },
-        otherPandemics: pandemics.filter(validPandemic).reverse()
+        coronavirus: coronavirus,
+        pandemics: [coronavirus, ...pandemics.filter(validPandemic).reverse()]
     };
 
     constructor(props) {
@@ -32,16 +34,15 @@ export class Layout extends React.Component {
     }
 
     refreshCoronavirus(newTotal) {
+        let updatedCoronaVirus = {
+            ...coronavirus,
+            "deaths": `${newTotal}`,
+            "minDeaths": newTotal,
+            "maxDeaths": newTotal,
+        };
         this.setState({
-            coronavirus: {
-                "deaths": `${newTotal}`,
-                "minDeaths": newTotal,
-                "maxDeaths": null,
-                "location": "Worldwide",
-                "date": "2019–present",
-                "name": "2019–20 coronavirus pandemic",
-                "disease": "COVID-19 / SARS-CoV-2"
-            }
+            coronavirus: updatedCoronaVirus,
+            pandemics: [updatedCoronaVirus, ...pandemics.filter(validPandemic).reverse()]
         });
     }
 
@@ -75,10 +76,10 @@ export class Layout extends React.Component {
                                 recordHistory={false}
                                 // anchors={anchors}
                                 // navigationTooltips={navigationTooltips}
-                                // verticalCentered={false}
+                                verticalCentered={false}
                                 render={({ state, fullpageApi }) =>
                                     <ReactFullpage.Wrapper>
-                                        <EventCollection events={this.state.otherPandemics} renderMode={mode} />
+                                        <EventCollection events={this.state.pandemics} renderMode={mode} />
                                     </ReactFullpage.Wrapper>
                                 }
                             />
