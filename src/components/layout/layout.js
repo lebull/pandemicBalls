@@ -70,11 +70,12 @@ export class Layout extends React.Component {
                                 className={"TimeLine"}
                                 licenseKey={"0822866D-6AE240B1-BFCD182C-DA43DAE6"}
                                 bigSectionsDestination={"top"}
-                                scrollingSpeed={1000}
+                                scrollingSpeed={400}
                                 navigation={false}
                                 recordHistory={false}
                                 // anchors={anchors}
                                 // navigationTooltips={navigationTooltips}
+                                // verticalCentered={false}
                                 render={({ state, fullpageApi }) =>
                                     <ReactFullpage.Wrapper>
                                         <EventCollection events={this.state.otherPandemics} renderMode={mode} />

@@ -21,11 +21,11 @@ export const EventCollection = ({ events, renderMode, side = "right", fullPageSe
     </div>
 
 
-export const Event = ({ event, renderMode, side = "right", fullPageSection = true, active=false}) => {
+export const Event = ({ event, renderMode, side="right", fullPageSection = true, active=false}) => {
     return (
         <div className={`Event ${side} ${fullPageSection ? "section" : ""} ${active ? "active" : ""} `}>
             <EventInfo event={event} active={active}/>
-            <EventCircle event={event} renderMode={renderMode}/>
+            <EventCircle event={event} renderMode={renderMode} side={side}/>
         </div>
     )
 }
@@ -54,7 +54,7 @@ export const EventInfo = ({ event, active=false }) => {
 
 }
 
-export const EventCircle = (props) => {
+export const EventCircle = ({event, renderMode, side="right"}) => {
 
     const scaleSize = (eventscale) => {
 
@@ -63,7 +63,7 @@ export const EventCircle = (props) => {
         let pxScale = 500;
         let circleSize = (eventscale / pxScale) ** (1 / 2);
 
-        if (props.renderMode === RenderMode.threedee) {
+        if (renderMode === RenderMode.threedee) {
             pxScale = 5;
             circleSize = (Math.round(eventscale / pxScale)) ** (1 / 3);
             returnStyle.boxShadow = `inset -${circleSize / 4}px -${circleSize / 4}px ${circleSize / 3}px rgba(0,0,0,0.8)`;
@@ -77,14 +77,18 @@ export const EventCircle = (props) => {
         }
     }
 
-    if (props.event.maxDeaths) {
+    if (event.maxDeaths) {
         return (
-            <div className="Circle transparent" style={scaleSize(props.event.maxDeaths)}>
-                <div className="Circle" style={scaleSize(props.event.minDeaths)} />
+            <div className="circle-wrapper">
+                <div className={`circle transparent ${side}`} style={scaleSize(event.maxDeaths)}>
+                    <div className={`circle ${side}`} style={scaleSize(event.minDeaths)} />
+                </div>
             </div>
         );
     }
 
-    return <div className="Circle" style={scaleSize(props.event.minDeaths)} />;
+    return <div className="circle-wrapper">
+        <div className={`circle ${side}`} style={scaleSize(event.minDeaths)} />
+    </div>;
 }
 

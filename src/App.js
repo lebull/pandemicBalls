@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { TopBar } from './components/utility/TopBar/TopBar';
+// import { TopBar } from './components/utility/TopBar/TopBar';
 import { Layout } from './components/layout/layout';
 
 export const ModeContext = React.createContext({
@@ -24,7 +24,7 @@ class App extends React.Component {
         return (
             <div data-testid="timeline">
                 <ModeContext.Provider value={this.state}>
-                    <TopBar />
+                    {/* <TopBar /> */}
                     <Layout />
                 </ModeContext.Provider>
             </div>

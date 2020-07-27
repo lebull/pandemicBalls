@@ -10,12 +10,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-        
-    .Circle {
+
+    .circle-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    .circle {
         display: flex;
         align-content: center;
         justify-content: center;
-        margin: auto;
+
         background-color: $ball;
         border-radius: 50%;
         align-self: center;
@@ -25,47 +30,46 @@
         }
 
         transition: width 1s, height 1s, box-shadow 1s;
+
+        &.left{
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.0));
+        }
+        &.right{
+            mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.0));
+        }
     }
 
-
     .event-info{
-        height: 8em;
+        height: 6em;
         font-family: "PT Sans";
+        text-align: center;
+        padding: 0.5em 1em 0em 1em;
+
+        margin-bottom: 1em;
+        
         h1, h2, h3, h4 {
             font-family: "Exo 2";
-        }
-
-        text-align: center;
-        padding: 2em 1em 0em 1em;
-        h1, h2, h3, h4 {
+            margin: 0;
+            font-size: 22px;
             margin: 0;
         }
         p {
             margin: 0;
         }
-        margin-bottom: 25px;
         
         &.active{
-            max-width: 600px;
-            justify-self: center;
-            align-self: center;
-            z-index: 50;
-            display: flex;
-            flex-direction: column;
-            background-color: #222;
+            visibility: hidden;
+            // max-width: 600px;
+            // justify-self: center;
+            // align-self: center;
+            // z-index: 50;
+            // display: flex;
+            // flex-direction: column;
+            // background-color: #222;
         }
     }
     
-    &.left{
-        .Circle{
-            mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.0));
-        }
-    }
-    &.right{
-        .Circle{
-            mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0) 50%, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.0));
-        }    
-    }
+
 }
 
 // .infoWrapper{

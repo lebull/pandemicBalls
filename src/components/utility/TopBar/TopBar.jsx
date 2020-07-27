@@ -11,7 +11,7 @@ export const TopBar = () => {
                 <h1>Pandemic Balls</h1>
                 <div className="spacer"/>
                 <LinkSet>
-                    <button className="button" onClick={toggleMode}>{mode === "threedee" ? "View in 2D" : "View in 3D"}</button>
+                    {/* <button className="button" onClick={toggleMode}>{mode === "threedee" ? "View in 2D" : "View in 3D"}</button> */}
                     {/* <Link href="/about" text="About"/> */}
                 </LinkSet>
             </div>
